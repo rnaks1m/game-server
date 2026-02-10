@@ -1,0 +1,3 @@
+# Исключить всю папку build
+build/
+working_version/
