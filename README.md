@@ -77,8 +77,8 @@ cmake --build . --config Release
 
 Перед запуском необходимо:
 1. Установить и запустить PostgreSQL (локально или удалённо).
-2. Создать базу данных (например, game_db).
-3. Задать переменную окружения GAME_DB_URL в формате:
+2. Создать базу данных (например, `game_db`).
+3. Задать переменную окружения `GAME_DB_URL` в формате:
 ```
 postgresql://username:password@host:port/database
 ```
@@ -87,3 +87,19 @@ postgresql://username:password@host:port/database
 `export GAME_DB_URL=postgresql://postgres:secret@localhost:5432/game_db`
 
 При первом обращении сервер автоматически создаст таблицу retired_players и необходимые индексы.
+
+## Запуск сервера
+Сервер принимает следующие параметры командной строки:
+
+### 🚀 Server Startup Configuration
+
+| Parameter | Description | Required |
+| :--- | :--- | :--- |
+| ` -c `, `--config-file` | Path to JSON config (maps, loot, and game rules) | ![Yes](https://img.shields.io/badge/REQUIRED-red?style=for-the-badge) |
+| ` -w `, `--www-root` | Path to static files directory (HTML, CSS, JS) | ![Yes](https://img.shields.io/badge/REQUIRED-red?style=for-the-badge) |
+| ` -f `, `--state-file` | Path to the file for saving/restoring game state | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
+| ` -t `, `--tick-period` | Auto-tick period in **ms** (defaults to manual via API) | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
+| ` -s `, `--save-period` | State save interval in **ms** (requires `--state-file`) | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
+| `--randomize-spawn` | Enable random spawn points for players | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
+| ` -h `, `--help` | Display help message and exit | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
+
