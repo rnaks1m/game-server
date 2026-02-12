@@ -103,3 +103,13 @@ postgresql://username:password@host:port/database
 | `--randomize-spawn` | Enable random spawn points for players | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
 | ` -h `, `--help` | Display help message and exit | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
 
+### Пример запуска
+```
+./game_server \
+  --config-file ./data/config.json \
+  --www-root ./static \
+  --state-file ./saves/state.txt \
+  --tick-period 100 \
+  --save-state-period 5000 \
+  --randomize-spawn-points
+```
