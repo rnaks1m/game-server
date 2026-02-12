@@ -21,6 +21,7 @@
   - GCC 10+, Clang 12+, MSVC 2019 16.11+ (Windows)
 - **CMake** версии **3.11** или выше
 - **Conan** — менеджер пакетов (версия 1.x или 2.x)
+
 Установка:
 ```
 pip install conan
@@ -29,9 +30,9 @@ pip install conan
   - Ubuntu/Debian: `libpq-dev`, `libpqxx-dev`
   - Windows: через **vcpkg** или установщик **EDB**
   - macOS:
-  ```
-  brew install postgresql libpqxx
-  ```
+```
+brew install postgresql libpqxx
+ ```
 
 ### Дополнительно для запуска тестов
 - **Catch2** — будет загружен через Conan
