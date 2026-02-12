@@ -114,3 +114,29 @@ postgresql://username:password@host:port/database
   --randomize-spawn-points
 ```
 После запуска сервер будет принимать HTTP-запросы **на порту 8080** (фиксировано).
+```
+http://localhost:8080
+```
+
+## Тестирование
+Для запуска модульных тестов используйте **CTest** или запустите `game_server_tests` напрямую:
+```
+cd build
+ctest -C Release    # Windows
+ctest               # Linux / macOS
+```
+Или вручную:
+```
+./game_server_tests
+```
+Тесты покрывают:
+- Генерацию лута (`loot_generator_tests.cpp`)
+- Детектор коллизий (`collision-detector-tests.cpp`)
+- Сериализацию состояния (`state-serialization-tests.cpp`)
+
+Все тесты должны завершаться успешно.
+
+## Конфигурация игры (JSON)
+Файл конфигурации (`--config-file`) содержит:
+- Список карт (`maps`) с дорогами, зданиями, офисами, типами лута, скоростью собак, вместимостью рюкзака
+- Глобальные настройки: `defaultDogSpeed`, `defaultBagCapacity`, `dogRetirementTime`, `lootGeneratorConfig`
