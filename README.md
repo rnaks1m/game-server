@@ -13,4 +13,25 @@
 | **Diagnostics & QA** | ![Boost.Log](https://img.shields.io/badge/Boost.Log-JSON_Structured-00599C?style=for-the-badge&logo=boost&logoColor=white) ![Catch2](https://img.shields.io/badge/Catch2-Unit_Testing-000000?style=for-the-badge) |
 | **Features** | ![Multithreading](https://img.shields.io/badge/Concurrency-Strands_/_Multithreading-orange?style=for-the-badge) ![Collision Detection](https://img.shields.io/badge/Logic-Collision_Detection-green?style=for-the-badge) |
 
+## Требования для сборки
 
+### Обязательное ПО
+
+- **Компилятор C++** с поддержкой **C++20:**
+  - GCC 10+, Clang 12+, MSVC 2019 16.11+ (Windows)
+- **CMake** версии **3.11** или выше
+- **Conan** — менеджер пакетов (версия 1.x или 2.x)
+Установка:
+```
+pip install conan
+```
+- **PostgreSQL** — библиотеки для разработки (будут автоматически загружены через **Conan**, но для запуска сервера требуется работающий экземпляр БД):
+  - Ubuntu/Debian: `libpq-dev`, `libpqxx-dev`
+  - Windows: через **vcpkg** или установщик **EDB**
+  - macOS:
+  ```
+  brew install postgresql libpqxx
+  ```
+
+### Дополнительно для запуска тестов
+- **Catch2** — будет загружен через Conan
