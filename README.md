@@ -113,3 +113,4 @@ postgresql://username:password@host:port/database
   --save-state-period 5000 \
   --randomize-spawn-points
 ```
+После запуска сервер будет принимать HTTP-запросы **на порту 8080** (фиксировано).
