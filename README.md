@@ -91,17 +91,17 @@ postgresql://username:password@host:port/database
 ## Запуск сервера
 Сервер принимает следующие параметры командной строки:
 
-### 🚀 Server Startup Configuration
+### 🚀 Конфигурация запуска сервера
 
-| Parameter | Description | Required |
+| Параметр | Описание | Обязательный |
 | :--- | :--- | :--- |
-| ` -c `, `--config-file` | Path to JSON config (maps, loot, and game rules) | ![Yes](https://img.shields.io/badge/REQUIRED-red?style=for-the-badge) |
-| ` -w `, `--www-root` | Path to static files directory (HTML, CSS, JS) | ![Yes](https://img.shields.io/badge/REQUIRED-red?style=for-the-badge) |
-| ` -f `, `--state-file` | Path to the file for saving/restoring game state | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
-| ` -t `, `--tick-period` | Auto-tick period in **ms** (defaults to manual via API) | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
-| ` -s `, `--save-period` | State save interval in **ms** (requires `--state-file`) | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
-| `--randomize-spawn` | Enable random spawn points for players | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
-| ` -h `, `--help` | Display help message and exit | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
+| ` -c `, `--config-file` | Путь к JSON-конфигу (карты, лут и правила игры) | ![Да](https://img.shields.io/badge/ОБЯЗАТЕЛЬНО-red?style=for-the-badge) |
+| ` -w `, `--www-root` | Путь к директории статики (HTML, CSS, JS) | ![Да](https://img.shields.io/badge/ОБЯЗАТЕЛЬНО-red?style=for-the-badge) |
+| ` -f `, `--state-file` | Файл для сохранения и восстановления состояния игры | ![Нет](https://img.shields.io/badge/ОПЦИОНАЛЬНО-grey?style=for-the-badge) |
+| ` -t `, `--tick-period` | Период авто-такта в **мс** (по умолчанию — через API) | ![Нет](https://img.shields.io/badge/ОПЦИОНАЛЬНО-grey?style=for-the-badge) |
+| ` -s `, `--save-period` | Интервал сохранения в **мс** (нужен `--state-file`) | ![Нет](https://img.shields.io/badge/ОПЦИОНАЛЬНО-grey?style=for-the-badge) |
+| `--randomize-spawn` | Включить случайные точки появления игроков | ![Нет](https://img.shields.io/badge/ОПЦИОНАЛЬНО-grey?style=for-the-badge) |
+| ` -h `, `--help` | Показать справку и выйти | ![Нет](https://img.shields.io/badge/ОПЦИОНАЛЬНО-grey?style=for-the-badge) |
 
 ### Пример запуска
 ```
