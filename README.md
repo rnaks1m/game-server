@@ -36,3 +36,54 @@ brew install postgresql libpqxx
 
 ### Дополнительно для запуска тестов
 - **Catch2** — будет загружен через Conan
+
+## Получение зависимостей
+Управление зависимостями осуществляется через **Conan**.
+
+Все необходимые библиотеки (Boost, libpqxx, Catch2) описаны в файле `conanfile.txt`.
+
+### Установка зависимостей
+Из корня проекта выполните:
+```
+mkdir build
+cd build
+conan install .. --build=missing -s build_type=Release -s compiler.libcxx=libstdc++11 # или Debug
+```
+
+## Сборка проекта
+После установки зависимостей выполните конфигурацию и сборку через **CMake**.
+
+### Linux / macOS
+```
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Debug
+cmake --build .
+```
+
+### Windows (MSVC)
+```
+cd build
+cmake .. -G "Visual Studio 17 2022" -A x64 -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake
+cmake --build . --config Release
+```
+После успешной сборки в каталоге `build` появится исполняемый файл:
+- **Linux / macOS**: `game_server`
+- **Windows**: `game_server.exe`
+
+Также будет собран набор модульных тестов: `game_server_tests`.
+
+## Настройка базы данных
+Сервер сохраняет завершённые игры (рекорды) в **PostgreSQL**.
+
+Перед запуском необходимо:
+1. Установить и запустить PostgreSQL (локально или удалённо).
+2. Создать базу данных (например, game_db).
+3. Задать переменную окружения GAME_DB_URL в формате:
+```
+postgresql://username:password@host:port/database
+```
+Пример:
+
+`export GAME_DB_URL=postgresql://postgres:secret@localhost:5432/game_db`
+
+При первом обращении сервер автоматически создаст таблицу retired_players и необходимые индексы.
