@@ -14,14 +14,3 @@
 | **Features** | ![Multithreading](https://img.shields.io/badge/Concurrency-Strands_/_Multithreading-orange?style=for-the-badge) ![Collision Detection](https://img.shields.io/badge/Logic-Collision_Detection-green?style=for-the-badge) |
 
 
-### 🚀 Server Startup Configuration
-
-| Parameter | Description | Required |
-| :--- | :--- | :--- |
-| ` -c `, `--config-file` | Path to JSON config (maps, loot, and game rules) | ![Yes](https://img.shields.io/badge/REQUIRED-red?style=for-the-badge) |
-| ` -w `, `--www-root` | Path to static files directory (HTML, CSS, JS) | ![Yes](https://img.shields.io/badge/REQUIRED-red?style=for-the-badge) |
-| ` -f `, `--state-file` | Path to the file for saving/restoring game state | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
-| ` -t `, `--tick-period` | Auto-tick period in **ms** (defaults to manual via API) | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
-| ` -s `, `--save-period` | State save interval in **ms** (requires `--state-file`) | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
-| `--randomize-spawn` | Enable random spawn points for players | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
-| ` -h `, `--help` | Display help message and exit | ![No](https://img.shields.io/badge/OPTIONAL-grey?style=for-the-badge) |
